@@ -1,4 +1,8 @@
 import ca.uqam.tp3_mgl869c.*;
+import ca.uqam.tp3_mgl869c.polynomial.APolynomial;
+import ca.uqam.tp3_mgl869c.polynomial.Polynomial;
+import ca.uqam.tp3_mgl869c.polynomial.term.ExceptionCoefficientZero;
+import ca.uqam.tp3_mgl869c.polynomial.term.Term;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;

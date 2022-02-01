@@ -1,16 +1,17 @@
-import ca.uqam.tp3_mgl869c.ExceptionCoefficientZero;
-import ca.uqam.tp3_mgl869c.Term;
+import ca.uqam.tp3_mgl869c.polynomial.term.ExceptionCoefficientZero;
+import ca.uqam.tp3_mgl869c.polynomial.term.Term;
 import org.junit.Assert;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.fail;
 
 public class TermTest {
     
     @Test
     public void nullCoefficientPassedToConstructor() {
         try {
-            Term term = new Term(0, 'x', 3);
+            new Term(0, 'x', 3);
             Assert.fail();
         } catch (ExceptionCoefficientZero ignored) {}
     }

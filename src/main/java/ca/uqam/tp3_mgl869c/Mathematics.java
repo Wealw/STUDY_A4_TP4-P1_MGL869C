@@ -1,5 +1,10 @@
 package ca.uqam.tp3_mgl869c;
 
+import ca.uqam.tp3_mgl869c.polynomial.APolynomial;
+import ca.uqam.tp3_mgl869c.polynomial.Polynomial;
+import ca.uqam.tp3_mgl869c.polynomial.term.ExceptionCoefficientZero;
+import ca.uqam.tp3_mgl869c.polynomial.term.Term;
+
 public class Mathematics {
     
     public void simplify(Polynomial polynomial) {
@@ -23,8 +28,8 @@ public class Mathematics {
     
     public Polynomial sumPolynomials(Polynomial polynomial1, Polynomial polynomial2) {
         Polynomial polynomial = new APolynomial();
-        Term[] p1Terms = polynomial1.getAllTerms();
-        Term[] p2Terms = polynomial2.getAllTerms();
+        Term[]     p1Terms    = polynomial1.getAllTerms();
+        Term[]     p2Terms    = polynomial2.getAllTerms();
         for (Term p1Term : p1Terms) {
             polynomial.addTerm(p1Term);
         }

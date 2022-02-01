@@ -1,8 +1,8 @@
-package ca.uqam.tp3_mgl869c;
+package ca.uqam.tp3_mgl869c.polynomial;
 
-import java.sql.Array;
-import java.util.*;
-import java.util.stream.Collectors;
+import ca.uqam.tp3_mgl869c.polynomial.term.Term;
+
+import java.util.ArrayList;
 
 public class APolynomial implements Polynomial {
     private final int    size  = 100;
@@ -42,7 +42,7 @@ public class APolynomial implements Polynomial {
     
     @Override
     public int[] getExponents() {
-        ArrayList<Integer> listOfExponent = new ArrayList<Integer>() {};
+        ArrayList<Integer> listOfExponent = new ArrayList<>() {};
         for (int i = 0; i < size; i++) {
             if (terms[i] != null) {
                 int exponent = terms[i].exponent;

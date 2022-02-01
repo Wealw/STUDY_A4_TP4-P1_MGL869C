@@ -1,11 +1,8 @@
-import ca.uqam.tp3_mgl869c.APolynomial;
-import ca.uqam.tp3_mgl869c.ExceptionCoefficientZero;
-import ca.uqam.tp3_mgl869c.Term;
+import ca.uqam.tp3_mgl869c.polynomial.APolynomial;
+import ca.uqam.tp3_mgl869c.polynomial.term.ExceptionCoefficientZero;
+import ca.uqam.tp3_mgl869c.polynomial.term.Term;
 import org.junit.Before;
 import org.junit.Test;
-
-import java.lang.reflect.Array;
-import java.util.Arrays;
 
 import static org.junit.Assert.*;
 
@@ -111,7 +108,7 @@ public class APolynomialTest {
         this.aPolynomial.addTerm(t2);
         this.aPolynomial.addTerm(t3);
         String result   = this.aPolynomial.toString();
-        String expected = String.format("%s+%s+%s", t1.toString(), t2.toString(), t3.toString());
+        String expected = String.format("%s+%s+%s", t1, t2, t3);
         assertEquals(expected, result);
     }
 }
