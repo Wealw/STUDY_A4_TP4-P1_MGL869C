@@ -3,6 +3,7 @@ package ca.uqam.tp3_mgl869c.polynomial;
 import ca.uqam.tp3_mgl869c.polynomial.term.Term;
 
 import java.util.ArrayList;
+import java.util.stream.IntStream;
 
 public class APolynomial implements Polynomial {
     private final int    size  = 100;
@@ -42,49 +43,54 @@ public class APolynomial implements Polynomial {
     
     @Override
     public int[] getExponents() {
-        ArrayList<Integer> listOfExponent = new ArrayList<>() {};
+        int[] listOfExponent = new int[0];
         for (int i = 0; i < size; i++) {
             if (terms[i] != null) {
                 int exponent = terms[i].exponent;
-                if (!listOfExponent.contains(exponent)) {
-                    listOfExponent.add(exponent);
+                if (IntStream.of(listOfExponent)
+                             .noneMatch(x -> x == exponent)) {
+                    int[] temp = new int[listOfExponent.length + 1];
+                    System.arraycopy(listOfExponent, 0, temp, 0, listOfExponent.length);
+                    System.arraycopy(new int[] {exponent}, 0, temp, listOfExponent.length, 1);
+                    listOfExponent = temp;
                 }
             }
         }
-        return listOfExponent.stream()
-                             .mapToInt(i -> i)
-                             .toArray();
+        //return listOfExponent.stream().mapToInt(i -> i).toArray();
+        return listOfExponent;
     }
     
     @Override
     public char[] getVariables() {
-        ArrayList<Character> listOfVariable = new ArrayList<>() {};
+        char[] listOfVariable = new char[0];
         for (int i = 0; i < size; i++) {
             if (terms[i] != null) {
                 char variable = terms[i].variable;
-                if (!listOfVariable.contains(variable)) {
-                    listOfVariable.add(variable);
+                if (!(new String(listOfVariable).contains(String.valueOf(variable)))) {
+                    char[] temp = new char[listOfVariable.length + 1];
+                    System.arraycopy(listOfVariable, 0, temp, 0, listOfVariable.length);
+                    System.arraycopy(new char[] {variable}, 0, temp, listOfVariable.length, 1);
+                    listOfVariable = temp;
                 }
             }
         }
-        char[] returnValue = new char[listOfVariable.size()];
-        for (int i = 0; i < listOfVariable.size(); i++) {
-            returnValue[i] = listOfVariable.get(i);
-        }
-        return returnValue;
+        return listOfVariable;
     }
     
     @Override
     public Term[] getTerms(char variable, int exponent) {
-        ArrayList<Term> listOfTerm = new ArrayList<>();
+        Term[] listOfTerm = new Term[0];
         for (int i = 0; i < size; i++) {
             if (terms[i] != null) {
                 if (terms[i].exponent == exponent && terms[i].variable == variable) {
-                    listOfTerm.add(terms[i]);
+                    Term[] temp = new Term[listOfTerm.length + 1];
+                    System.arraycopy(listOfTerm, 0, temp, 0, listOfTerm.length);
+                    System.arraycopy(new Term[] {terms[i]}, 0, temp, listOfTerm.length, 1);
+                    listOfTerm = temp;
                 }
             }
         }
-        return listOfTerm.toArray(new Term[0]);
+        return listOfTerm;
     }
     
     @Override
