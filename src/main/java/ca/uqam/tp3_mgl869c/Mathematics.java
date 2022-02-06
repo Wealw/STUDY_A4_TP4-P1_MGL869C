@@ -7,7 +7,7 @@ import ca.uqam.tp3_mgl869c.polynomial.term.Term;
 
 public class Mathematics {
     
-    public void simplify(Polynomial polynomial) {
+    public static void simplify(Polynomial polynomial) {
         int[]  exponents = polynomial.getExponents();
         char[] variables = polynomial.getVariables();
         for (int exponent : exponents) {
@@ -26,7 +26,7 @@ public class Mathematics {
         }
     }
     
-    public Polynomial sumPolynomials(Polynomial polynomial1, Polynomial polynomial2) {
+    public static Polynomial sumPolynomials(Polynomial polynomial1, Polynomial polynomial2) {
         Polynomial polynomial = new APolynomial();
         Term[]     p1Terms    = polynomial1.getAllTerms();
         Term[]     p2Terms    = polynomial2.getAllTerms();
@@ -36,7 +36,7 @@ public class Mathematics {
         for (Term p2Term : p2Terms) {
             polynomial.addTerm(p2Term);
         }
-        simplify(polynomial);
+        Mathematics.simplify(polynomial);
         return polynomial;
     }
 }
