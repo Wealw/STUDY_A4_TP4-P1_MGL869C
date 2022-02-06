@@ -2,7 +2,6 @@ package ca.uqam.tp3_mgl869c.polynomial;
 
 import ca.uqam.tp3_mgl869c.polynomial.term.Term;
 
-import java.util.ArrayList;
 import java.util.stream.IntStream;
 
 public class APolynomial implements Polynomial {
@@ -95,13 +94,16 @@ public class APolynomial implements Polynomial {
     
     @Override
     public Term[] getAllTerms() {
-        ArrayList<Term> listOfTerm = new ArrayList<>();
+        Term[] listOfTerm = new Term[0];
         for (int i = 0; i < size; i++) {
             if (terms[i] != null) {
-                listOfTerm.add(terms[i]);
+                Term[] temp = new Term[listOfTerm.length + 1];
+                System.arraycopy(listOfTerm, 0, temp, 0, listOfTerm.length);
+                System.arraycopy(new Term[] {terms[i]}, 0, temp, listOfTerm.length, 1);
+                listOfTerm = temp;
             }
         }
-        return listOfTerm.toArray(new Term[0]);
+        return listOfTerm;
     }
     
     @Override
