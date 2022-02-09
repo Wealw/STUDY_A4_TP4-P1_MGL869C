@@ -1,18 +1,21 @@
-import ca.uqam.tp3_mgl869c.polynomial.APolynomial;
+import ca.uqam.tp3_mgl869c.polynomial.LLPolynomial;
 import ca.uqam.tp3_mgl869c.polynomial.term.ExceptionCoefficientZero;
 import ca.uqam.tp3_mgl869c.polynomial.term.Term;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.util.LinkedList;
+import java.util.List;
+
 import static org.junit.Assert.*;
 
-public class APolynomialTest {
+public class LLPolynomialTest {
     
-    APolynomial aPolynomial;
+    LLPolynomial aPolynomial;
     
     @Before
     public void init() {
-        aPolynomial = new APolynomial();
+        aPolynomial = new LLPolynomial();
     }
     
     @Test
@@ -22,7 +25,7 @@ public class APolynomialTest {
             this.aPolynomial.addTerm(new Term(1, 'x', 1));
         }
         boolean result = this.aPolynomial.addTerm(new Term(1, 'x', 1));
-        assertFalse(result);
+        assertTrue(result);
     }
     
     @Test
@@ -32,7 +35,7 @@ public class APolynomialTest {
         this.aPolynomial.addTerm(new Term(1, 'x', 1));
         int expected = 2;
         int result   = this.aPolynomial.getNumberTerms();
-        assertEquals(result, expected);
+        assertEquals(expected, result);
     }
     
     @Test
@@ -58,9 +61,12 @@ public class APolynomialTest {
         this.aPolynomial.addTerm(new Term(1, 'x', 0));
         this.aPolynomial.addTerm(new Term(1, 'x', 1));
         this.aPolynomial.addTerm(new Term(1, 'x', 5));
-        int[] result   = this.aPolynomial.getExponents();
-        int[] expected = {0, 1, 5};
-        assertArrayEquals(expected, result);
+        List<Integer> result   = this.aPolynomial.getExponents();
+        List<Integer> expected = new LinkedList<>();
+        expected.add(0);
+        expected.add(1);
+        expected.add(5);
+        assertEquals(expected, result);
     }
     
     @Test
@@ -68,9 +74,12 @@ public class APolynomialTest {
         this.aPolynomial.addTerm(new Term(1, 'x', 0));
         this.aPolynomial.addTerm(new Term(1, 'y', 1));
         this.aPolynomial.addTerm(new Term(1, 'z', 5));
-        char[] result   = this.aPolynomial.getVariables();
-        char[] expected = {'x', 'y', 'z'};
-        assertArrayEquals(expected, result);
+        List<Character> result   = this.aPolynomial.getVariables();
+        List<Character> expected = new LinkedList<>();
+        expected.add('x');
+        expected.add('y');
+        expected.add('z');
+        assertEquals(expected, result);
     }
     
     @Test
@@ -81,9 +90,9 @@ public class APolynomialTest {
         this.aPolynomial.addTerm(t1);
         this.aPolynomial.addTerm(t2);
         this.aPolynomial.addTerm(t3);
-        Term[] result   = this.aPolynomial.getTerms('x', 5);
-        Term[] expected = {t1, t3};
-        assertArrayEquals(expected, result);
+        List<Term> result   = this.aPolynomial.getTerms('x', 5);
+        List<Term> expected = List.of(new Term[] {t1, t3});
+        assertEquals(expected, result);
     }
     
     @Test
@@ -94,9 +103,9 @@ public class APolynomialTest {
         this.aPolynomial.addTerm(t1);
         this.aPolynomial.addTerm(t2);
         this.aPolynomial.addTerm(t3);
-        Term[] result   = this.aPolynomial.getAllTerms();
-        Term[] expected = {t1, t2, t3};
-        assertArrayEquals(expected, result);
+        List<Term> result   = this.aPolynomial.getAllTerms();
+        List<Term> expected = List.of(new Term[] {t1, t2, t3});
+        assertEquals(expected, result);
     }
     
     @Test

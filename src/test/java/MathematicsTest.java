@@ -1,5 +1,5 @@
 import ca.uqam.tp3_mgl869c.Mathematics;
-import ca.uqam.tp3_mgl869c.polynomial.APolynomial;
+import ca.uqam.tp3_mgl869c.polynomial.LLPolynomial;
 import ca.uqam.tp3_mgl869c.polynomial.Polynomial;
 import ca.uqam.tp3_mgl869c.polynomial.term.ExceptionCoefficientZero;
 import ca.uqam.tp3_mgl869c.polynomial.term.Term;
@@ -10,7 +10,7 @@ public class MathematicsTest {
     
     @Test
     public void testSimplify() throws ExceptionCoefficientZero {
-        Polynomial polynomial = new APolynomial();
+        Polynomial polynomial = new LLPolynomial();
         polynomial.addTerm(new Term(1.5, ' ', 0));
         polynomial.addTerm(new Term(-4, ' ', 0));
         polynomial.addTerm(new Term(2, 'x', 1));
@@ -26,8 +26,8 @@ public class MathematicsTest {
     
     @Test
     public void testSumPolynomial() throws ExceptionCoefficientZero {
-        Polynomial p1 = new APolynomial();
-        Polynomial p2 = new APolynomial();
+        Polynomial p1 = new LLPolynomial();
+        Polynomial p2 = new LLPolynomial();
         p1.addTerm(new Term(1.5, ' ', 0));
         p1.addTerm(new Term(-4, ' ', 0));
         p1.addTerm(new Term(2, 'x', 1));

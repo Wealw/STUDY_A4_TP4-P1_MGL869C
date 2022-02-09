@@ -1,6 +1,6 @@
 package ca.uqam.tp3_mgl869c;
 
-import ca.uqam.tp3_mgl869c.polynomial.APolynomial;
+import ca.uqam.tp3_mgl869c.polynomial.LLPolynomial;
 import ca.uqam.tp3_mgl869c.polynomial.Polynomial;
 import ca.uqam.tp3_mgl869c.polynomial.term.ExceptionCoefficientZero;
 import ca.uqam.tp3_mgl869c.polynomial.term.Term;
@@ -10,8 +10,8 @@ public class main {
     @SuppressWarnings ("MethodNameSameAsClassName")
     public static void main(String[] args) {
         try {
-            Polynomial  p1          = new APolynomial();
-            Polynomial  p2          = new APolynomial();
+            Polynomial p1 = new LLPolynomial();
+            Polynomial p2 = new LLPolynomial();
             p1.addTerm(new Term(1.5, ' ', 0));
             p1.addTerm(new Term(-4, ' ', 0));
             p1.addTerm(new Term(2, 'x', 1));
