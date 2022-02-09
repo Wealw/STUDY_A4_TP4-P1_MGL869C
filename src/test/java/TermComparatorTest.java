@@ -1,6 +1,6 @@
-import ca.uqam.tp3_mgl869c.polynomial.TermComparator;
-import ca.uqam.tp3_mgl869c.polynomial.term.ExceptionCoefficientZero;
-import ca.uqam.tp3_mgl869c.polynomial.term.Term;
+import ca.uqam.tp4_p1_mgl869c.polynomial.TermComparator;
+import ca.uqam.tp4_p1_mgl869c.polynomial.term.ExceptionCoefficientZero;
+import ca.uqam.tp4_p1_mgl869c.polynomial.term.Term;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;

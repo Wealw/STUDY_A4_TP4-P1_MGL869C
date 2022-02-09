@@ -1,6 +1,6 @@
-package ca.uqam.tp3_mgl869c.polynomial;
+package ca.uqam.tp4_p1_mgl869c.polynomial;
 
-import ca.uqam.tp3_mgl869c.polynomial.term.Term;
+import ca.uqam.tp4_p1_mgl869c.polynomial.term.Term;
 
 import java.util.ArrayList;
 import java.util.LinkedList;

@@ -1,9 +1,9 @@
-package ca.uqam.tp3_mgl869c;
+package ca.uqam.tp4_p1_mgl869c;
 
-import ca.uqam.tp3_mgl869c.polynomial.LLPolynomial;
-import ca.uqam.tp3_mgl869c.polynomial.Polynomial;
-import ca.uqam.tp3_mgl869c.polynomial.term.ExceptionCoefficientZero;
-import ca.uqam.tp3_mgl869c.polynomial.term.Term;
+import ca.uqam.tp4_p1_mgl869c.polynomial.LLPolynomial;
+import ca.uqam.tp4_p1_mgl869c.polynomial.Polynomial;
+import ca.uqam.tp4_p1_mgl869c.polynomial.term.ExceptionCoefficientZero;
+import ca.uqam.tp4_p1_mgl869c.polynomial.term.Term;
 
 
 public class main {

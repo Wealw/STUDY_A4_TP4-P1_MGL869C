@@ -7,9 +7,9 @@
     </properties>
     <modelVersion>4.0.0</modelVersion>
     <groupId>ca.uqam</groupId>
-    <artifactId>STUDY_A4_TP3_MGL869C</artifactId>
+    <artifactId>STUDY_A4_TP4-P1_MGL869C</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <name>STUDY_A4_TP3_MGL869C</name>
+    <name>STUDY_A4_TP4-P1_MGL869C</name>
     <packaging>jar</packaging>
     <dependencies>
         <dependency>
@@ -44,7 +44,7 @@
                         <manifest>
                             <addClasspath>true</addClasspath>
                             <classpathPrefix>libs/</classpathPrefix>
-                            <mainClass>ca.uqam.tp3_mgl869c.main</mainClass>
+                            <mainClass>ca.uqam.tp4-p1_mgl869c.main</mainClass>
                         </manifest>
                     </archive>
                 </configuration>
@@ -81,7 +81,7 @@
                             <archive>
                                 <manifest>
                                     <mainClass>
-                                        ca.uqam.tp3_mgl869c.main
+                                        ca.uqam.tp4-p1_mgl869c.main
                                     </mainClass>
                                 </manifest>
                             </archive>

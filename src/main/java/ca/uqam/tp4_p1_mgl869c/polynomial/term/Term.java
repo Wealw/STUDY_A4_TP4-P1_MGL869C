@@ -1,4 +1,4 @@
-package ca.uqam.tp3_mgl869c.polynomial.term;
+package ca.uqam.tp4_p1_mgl869c.polynomial.term;
 
 public class Term {
     public final double coefficient;
