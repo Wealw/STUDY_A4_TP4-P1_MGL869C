@@ -2,6 +2,7 @@ package ca.uqam.tp3_mgl869c;
 
 import ca.uqam.tp3_mgl869c.polynomial.LLPolynomial;
 import ca.uqam.tp3_mgl869c.polynomial.Polynomial;
+import ca.uqam.tp3_mgl869c.polynomial.TermComparator;
 import ca.uqam.tp3_mgl869c.polynomial.term.ExceptionCoefficientZero;
 import ca.uqam.tp3_mgl869c.polynomial.term.Term;
 
@@ -40,5 +41,15 @@ public class Mathematics {
         }
         Mathematics.simplify(polynomial);
         return polynomial;
+    }
+    
+    public static Polynomial sort(Polynomial polynomial) {
+        List<Term> terms = polynomial.getAllTerms();
+        terms.sort(new TermComparator());
+        Polynomial return_value = new LLPolynomial();
+        for (Term term : terms) {
+            return_value.addTerm(term);
+        }
+        return return_value;
     }
 }

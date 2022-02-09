@@ -40,4 +40,19 @@ public class MathematicsTest {
         String     expected = "-2.5+2x+8x^2+-20y^2+11y^10";
         Assert.assertEquals(expected, result);
     }
+    
+    @Test
+    public void testSort() throws ExceptionCoefficientZero {
+        Polynomial p1 = new LLPolynomial();
+        p1.addTerm(new Term(4, 'x', 1));
+        p1.addTerm(new Term(4, 'y', 1));
+        p1.addTerm(new Term(2, 'x', 3));
+        p1.addTerm(new Term(2, 'y', 3));
+        p1.addTerm(new Term(3, 'x', 2));
+        p1.addTerm(new Term(3, 'y', 2));
+        Polynomial p2       = Mathematics.sort(p1);
+        String     result   = p2.toString();
+        String     expected = "2x^3+3x^2+4x+2y^3+3y^2+4y";
+        Assert.assertEquals(expected, result);
+    }
 }
