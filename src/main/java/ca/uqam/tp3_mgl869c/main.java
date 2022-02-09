@@ -19,7 +19,7 @@ public class main {
             p2.addTerm(new Term(-20, 'y', 2));
             p2.addTerm(new Term(2, 'y', 10));
             p2.addTerm(new Term(9, 'y', 10));
-            Polynomial p3 = Mathematics.sumPolynomials(p1, p2);
+            Polynomial p3 = Mathematics.sort(Mathematics.sumPolynomials(p1, p2));
             System.out.print(p3);
         } catch (ExceptionCoefficientZero e) {
             e.printStackTrace();
